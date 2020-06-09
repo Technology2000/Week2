@@ -1,0 +1,7 @@
+import java.lang.String;
+class Solution {
+    public String defangIPaddr(String address) {
+       String str=new String(address);
+        return str.replace(".","[.]");
+    }
+}
