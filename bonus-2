@@ -1,0 +1,40 @@
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        Scanner sc=new Scanner(System.in);
+            int T=sc.nextInt();
+            for(int i=0;i<T;i++){
+                  int o1=0; int c1=0;
+            int o2=0; int c2=0;
+            int o3=0; int c3=0;
+                String s=sc.next();
+                for(int j=0;j<s.length();j++){
+                    switch(s.charAt(j)){
+                        case '(':
+                        o1++;
+                        break;
+                        case ')':
+                        c1++;
+                        break;
+                        case '[':
+                        o2++;
+                        break;
+                        case ']':
+                        c2++;
+                        break;
+                        case '{':
+                        o3++;
+                        break;
+                        case '}':
+                        c3++;
+                        break;
+                    }
+                }
+        int max_len=2*Math.min(o1,c1)+2*Math.min(o2,c2)+2*Math.min(o3,c3);
+        System.out.println(max_len);
+            }
+        }
+    }
+
+        
