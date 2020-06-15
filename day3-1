@@ -1,0 +1,30 @@
+class Solution {
+    public List<String> commonChars(String[] A) {
+        if(A==null ||A.length==0)return null;
+        int array1[]=new int[26];
+        array1=Charcount(A[0]);
+        for(int i=1;i<A.length;i++){
+            int[] array2=new int[26];
+            array2=Charcount(A[i]);
+            for(int j=0;j<array1.length;j++){
+                array1[j]=Math.min(array1[j],array2[j]);
+            }
+            }
+        ArrayList<String> list=new ArrayList<>();
+        for(int k=0;k<array1.length;k++){
+            while(array1[k]>0){
+            list.add(String.valueOf((char)(k+'a')));
+              array1[k]--;
+        }
+        }
+        return list;
+    }
+        int[] Charcount(String a){
+            int[] charcount=new int[26];
+            for(char c:a.toCharArray()){
+                charcount[c-'a']++;
+            }
+        return charcount;
+        }
+        }
+        
